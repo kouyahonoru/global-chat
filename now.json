@@ -1,5 +1,5 @@
 {
-  "name": "Esc-template",
+  "name": "Esc-global-chat",
   "version": 1,
   "scale": {
     "sfo1": {
@@ -8,6 +8,6 @@
     }
   },
   "env": {
-    "TOKEN": "@template_bot_token"
+    "TOKEN": "@global-chat_bot_token"
   }
 }
