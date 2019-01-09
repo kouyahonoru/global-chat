@@ -1,0 +1,7 @@
+{
+  "name": "Esc-template",
+  "version": 2,
+  "env": {
+    "TOKEN":"@template_bot_token"
+  }
+}
