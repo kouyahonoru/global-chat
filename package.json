@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Esc-Developer/template/issues"
   },
-  "homepage": "https://github.com/Esc-Developer/template#readme"
+  "homepage": "https://github.com/Esc-Developer/template#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
 }
