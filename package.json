@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Esc-Developer/template#readme",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master"
   }
 }
