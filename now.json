@@ -1,7 +1,13 @@
 {
   "name": "Esc-template",
-  "version": 2,
+  "version": 1,
+  "scale": {
+    "sfo1": {
+      "max": 1,
+      "min": 1
+    }
+  },
   "env": {
-    "TOKEN":"@template_bot_token"
+    "TOKEN": "@template_bot_token"
   }
 }
