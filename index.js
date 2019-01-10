@@ -8,7 +8,10 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
+<<<<<<< HEAD
     if(message.author.bot)return;
+=======
+>>>>>>> acb507e68db1514e0f5a4ff9f23c31b1d5b3421f
     if (!message.channel.name === "esc-global-chat") return;
     
     const global_msg = message.content;
