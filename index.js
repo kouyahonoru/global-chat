@@ -14,12 +14,42 @@ client.on("message", message => {
 
   if (!message.channel.name === "esc-global-chat") return;
 
-  const global_msg = message.content;
+  if (message.mentions.users.first()) {
+    message.reply("グローバルチャットでのメンションは禁止です");
+    return;
+  }
 
-  client.channels.forEach(channel => {
+  const global_msg = message.content;
+  const hook_option = {
+    username: message.author.tag,
+    avatarURL: message.author.avatarURL,
+    disableEveryone: true
+  };
+
+  client.channels.forEach(async channel => {
     if (channel.name === "esc-global-chat") {
-      message.channel.send(global_msg);
+      try {
+        const hooks = await channel.fetchWebhooks();
+
+        if (hooks.size === 0) {
+          if (channel.id === message.channel.id) {
+            channel.createWebhook("global-chat").then(hook => {
+              message.channel.send(
+                "グローバルチャットが利用できるようになりました！"
+              );
+              hook.send(global_msg, hook_option);
+            });
+          }
+        } else {
+          hooks.first().send(global_msg, hook_option);
+        }
+      } catch (error) {
+        message.reply("WebHookの管理権限を付与してください");
+      }
     }
+    message
+      .delete(100)
+      .catch(() => message.reply("メッセージの管理権限を付与してください"));
   });
 });
 
