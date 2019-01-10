@@ -10,9 +10,14 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-  if (message.author.bot) return;
+  if (message.author.bot || !message.guild) return;
 
   if (!message.channel.name === "esc-global-chat") return;
+
+  if (!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) {
+    message.reply("WebHooksの管理権限を付与してください");
+    return;
+  }
 
   if (message.mentions.users.first()) {
     message.reply("グローバルチャットでのメンションは禁止です");
@@ -26,9 +31,18 @@ client.on("message", message => {
     disableEveryone: true
   };
 
+  message
+    .delete(2000)
+    .catch(() =>
+      message.reply(
+        "メッセージの管理権限を付与してください\nそれでも解決しない場合は`mouse#2240`まで"
+      )
+    );
+
   client.channels.forEach(async channel => {
     if (channel.name === "esc-global-chat") {
       try {
+        if (!channel.guild.me.hasPermission("MANAGE_WEBHOOKS")) return;
         const hooks = await channel.fetchWebhooks();
 
         if (hooks.size === 0) {
@@ -45,19 +59,12 @@ client.on("message", message => {
         }
       } catch (error) {
         message.reply(
-          "WebHookの管理権限を付与してください\nそれでも解決しない場合は`mouse#2240`まで"
+          "エラーが発生しました\nもう一度送信しても解決しない場合は`mouse#2240`まで" +
+            error
         );
       }
     }
   });
-
-  message
-    .delete(100)
-    .catch(() =>
-      message.reply(
-        "メッセージの管理権限を付与してください\nそれでも解決しない場合は`mouse#2240`まで"
-      )
-    );
 });
 
 client.login(process.env.TOKEN);
