@@ -1,5 +1,17 @@
 {
+  "name": "Esc-global-chat",
+  "version": 1,
+  "scale": {
+    "sfo1": {
+      "max": 1,
+      "min": 1
+    }
+  },
+  "alias": ["https://github.com/Esc-Developer/global-chat/tree/master"],
   "github": {
-    "enabled": false
+    "autoAlias": false
+  },
+  "env": {
+    "TOKEN": "@global-chat_bot_token"
   }
 }
