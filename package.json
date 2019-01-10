@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Esc-Developer/template.git"
+    "url": "git+https://github.com/Esc-Developer/global-chat.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Esc-Developer/template/issues"
+    "url": "https://github.com/Esc-Developer/global-chat/issues"
   },
-  "homepage": "https://github.com/Esc-Developer/template#readme",
+  "homepage": "https://github.com/Esc-Developer/global-chat#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
     "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master"
