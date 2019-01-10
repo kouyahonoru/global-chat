@@ -44,13 +44,20 @@ client.on("message", message => {
           hooks.first().send(global_msg, hook_option);
         }
       } catch (error) {
-        message.reply("WebHookの管理権限を付与してください");
+        message.reply(
+          "WebHookの管理権限を付与してください\nそれでも解決しない場合は`mouse#2240`まで"
+        );
       }
     }
-    message
-      .delete(100)
-      .catch(() => message.reply("メッセージの管理権限を付与してください"));
   });
+
+  message
+    .delete(100)
+    .catch(() =>
+      message.reply(
+        "メッセージの管理権限を付与してください\nそれでも解決しない場合は`mouse#2240`まで"
+      )
+    );
 });
 
 client.login(process.env.TOKEN);
