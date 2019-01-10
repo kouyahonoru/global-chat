@@ -8,12 +8,13 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-    if (!message.channel.name === "Esc-global-chat") return;
+    if(message.author.bot)return;
+    if (!message.channel.name === "esc-global-chat") return;
     
     const global_msg = message.content;
 
     client.channels.forEach((channel)=>{
-        if(channel.name === "Esc-global-chat"){
+        if(channel.name === "esc-global-chat"){
             message.channel.send(global_msg);
         }
     });
