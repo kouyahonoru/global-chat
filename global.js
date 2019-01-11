@@ -4,12 +4,7 @@ module.exports.run = (client, message) => {
         return;
     }
 
-    if (message.mentions.users.first()) {
-        message.reply("グローバルチャットでのメンションは禁止です");
-        return;
-    }
-
-    const global_msg = message.content;
+    const global_msg = message.cleanContent;
     const hook_option = {
         username: message.author.tag,
         avatarURL: message.author.avatarURL,
