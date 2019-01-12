@@ -3,13 +3,18 @@ module.exports.run = (client, message) => {
         message.reply("WebHooksの管理権限を付与してください");
         return;
     }
-
-    const global_msg = message.cleanContent;
-    const hook_option = {
+    /*globals global_msg,hook_option*/
+    global_msg = message.cleanContent;
+    hook_option = {
         username: message.author.tag,
         avatarURL: message.author.avatarURL,
         disableEveryone: true,
     };
+
+    if (message.attachments.some(e => e.attachment)) {
+        global_msg = `file:${global_msg}`;
+        hook_option.file = message.attachments.first().url;
+    }
 
     client.channels.forEach(async channel => {
         if (channel.name === "esc-global-chat") {
