@@ -17,11 +17,8 @@ client.on("message", message => {
     if (message.content === "g!help") {
         const embed = {
             username: `${client.user.tag}の使い方`,
+            description: "正しく利用してください",
             fields: [
-                {
-                    name: "お決まり",
-                    value: "正しくご利用をお願いします",
-                },
                 {
                     name: "接続方法",
                     value: "`esc-global-chat`を作成するだけです！",
