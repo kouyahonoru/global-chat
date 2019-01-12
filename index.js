@@ -32,7 +32,7 @@ client.on("message", message => {
                 },
                 {
                     name: "バグ・質問",
-                    value: "準備中",
+                    value: "[こちら](https://discord.gg/7dGssZn)にお願いします",
                 },
                 {
                     name: "作成者",
