@@ -11,8 +11,7 @@ module.exports.run = (client, message) => {
         disableEveryone: true,
     };
 
-    if (message.attachments.some(e => e.attachment)) {
-        global_msg = `file:${global_msg}`;
+    if (message.attachments.first()) {
         hook_option.file = message.attachments.first().url;
     }
 
