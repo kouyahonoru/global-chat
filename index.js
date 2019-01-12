@@ -15,7 +15,7 @@ client.on("message", message => {
     if (message.author.bot || !message.guild) return;
 
     if (message.content === "g!help") {
-        let embed = {
+        const embed = {
             title: `${client.user.tag}の使い方`,
             fields: [
                 {
