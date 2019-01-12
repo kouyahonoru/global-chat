@@ -36,7 +36,7 @@ client.on("message", message => {
                 },
                 {
                     name: "作成者",
-                    value: "Esc",
+                    value: "[Esc]™ グループ",
                 },
             ],
         };
