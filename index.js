@@ -40,7 +40,7 @@ client.on("message", message => {
                 },
             ],
         };
-        message.channel.send(embed);
+        message.channel.send({ embed });
     }
 
     if (message.channel.name === "esc-global-chat") {
