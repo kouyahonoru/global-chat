@@ -16,7 +16,7 @@ client.on("message", message => {
 
     if (message.content === "g!help") {
         const embed = {
-            username: `${client.user.username}の使い方`,
+            title: `${client.user.username}の使い方`,
             description: "正しく利用してください",
             fields: [
                 {
