@@ -7,6 +7,10 @@
       "min": 1
     }
   },
+  "alias": ["https://github.com/Esc-Developer/global-chat/tree/master"],
+  "github": {
+    "autoAlias": false
+  },
   "env": {
     "TOKEN": "@global-chat_bot_token"
   }
