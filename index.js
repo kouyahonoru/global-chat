@@ -19,7 +19,7 @@ client.on("message", message => {
             username: `${client.user.tag}の使い方`,
             fields: [
                 {
-                    name: "利用規約",
+                    name: "お決まり",
                     value: "正しくご利用をお願いします",
                 },
                 {
